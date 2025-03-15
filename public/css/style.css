@@ -1,0 +1,655 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&family=Roboto&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background: #1a0327;
+    font-family: 'Poppins', sans-serif;
+    height: 350vh;
+}
+.container{
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url(https://img.freepik.com/free-photo/3d-illustration-blue-purple-futuristic-sci-fi-techno-lights-cool-background_181624-57587.jpg?t=st=1742056094~exp=1742059694~hmac=0da78b5818b5d732519b1648ff703abb3182faba5f7d7c971ee49cb90aaeb270&w=1380);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+/* Header Styles */
+header{
+    width: 100%;
+    height: 10vh;
+    background: #3a0157;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    position: relative;
+}
+
+.hamburger-btn {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.logo{
+    width: 300px;
+    height: 10vh;
+    background: #ffe600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000000;
+    clip-path: polygon(0 0, 100% 0, 64% 100%, 0% 100%);
+    padding: 10px;
+    line-height: 1.3rem;
+    margin-left: 70px;
+}
+.logo p{
+    width: 130px;
+    margin-left: 10px;
+    font-size: 20px;
+}
+.logo .fas{
+    font-size: 50px;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    position: fixed;
+    left: -250px;
+    top: 0;
+    width: 250px;
+    height: 100vh;
+    background: #3a0157;
+    transition: left 0.3s ease;
+    z-index: 1000;
+    padding-top: 60px;
+}
+
+.sidebar.active {
+    left: 0;
+}
+
+.sidebar-nav {
+    list-style: none;
+    padding: 20px;
+}
+
+.sidebar-nav li {
+    margin: 15px 0;
+}
+
+.sidebar-nav li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1rem;
+    display: block;
+    padding: 10px;
+    transition: all 0.3s ease;
+}
+
+.sidebar-nav li a.active {
+    color: #FEC53A;
+    border-left: 4px solid #FEC53A;
+}
+
+.sidebar-nav li a:hover:not(.active) {
+    color: #FEC53A;
+    padding-left: 20px;
+}
+
+/* Content Styles */
+.content-wrapper{
+    width: 80%;
+    min-height: 80vh;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+}
+
+.content-desc h1{
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+.content-desc p{
+    width: 550px;
+    font-size: 1.3rem;
+    line-height: 2rem;
+    margin-bottom: 10px;
+}
+.content-desc span{
+    color: #FEC53A;
+}
+#btn2{
+    width: 350px;
+    height: 7vh;
+    padding-left: 20px;
+    outline: none;
+    border: none;
+    background: #FEC53A;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: 20px;
+    clip-path: polygon(0 0, 74% 0, 100% 100%, 0% 100%);
+    border-radius: 20px;
+    text-align: left;
+    text-decoration: none; /* Remove underline */
+    display: inline-block; /* Make it behave like a button */
+    color: #000; /* Add text color if needed */
+}
+
+
+
+.rakuto{
+    width: 400px;
+    height: 400px;
+    background: linear-gradient(rgba(38, 2, 39, 0.849),rgb(204, 115, 14));
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+.rakuto::before{
+    content: '';
+    width: 160px;
+    height: 160px;
+    background: url(../images/cube.png);
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    top: 10px;
+    left: 200px;
+}
+.rakuto::after{
+    content: '';
+    width: 400px;
+    height: 400px;
+    background: url(../images/rakuto.png);
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    bottom: 0px;
+    left: -150px;
+}
+.logo-section{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 30px 0;
+}
+.logo-section .fas{
+    font-size: 6rem;
+    color: #FEC53A;
+}
+.logo-section h1{
+    width: 250px;
+    font-size: 2rem;
+    color: #FEC53A;
+    margin-left: 10px;
+}
+/* Section one starts here */
+
+.section-1{
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.767),rgba(0, 0, 0, 0.712)),
+    url(data:image/jpeg;base64,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);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+
+}
+.section-1-wrapper{
+    width: 70%;
+    margin: auto;
+}
+.section-1 h1{
+    width: 500px;
+    color: #FEC53A;
+    font-size: 1.5rem;
+    position: relative;
+    font-weight: 400;
+}
+.section-1-img{
+    display: flex;
+}
+.section-1-img .img{
+    width: 100px;
+    height: 130px;
+    background: url(https://variety.com/wp-content/uploads/2024/08/Valorant_a27b53.png?w=1000&h=667&crop=1&resize=1000%2C667);
+    background-size: cover;
+    background-position: center;
+    margin-right: 10px;
+    border-radius: 10px;
+}
+.section-1-img .img-2{
+    background: url(https://m.media-amazon.com/images/M/MV5BNmRiYmJlYmEtN2I1Ni00N2IwLThkNWEtMDVhNzA1YTZhOTA4XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg);
+    background-size: cover;
+    background-position: center;
+}
+.section-1-img  .img-3{
+    background: url(https://hayestalisman.com/wp-content/uploads/2024/12/XVT5RCXv74mdDcE93E9sIcmvHL3ScqE1ObyhIybf.png);
+    background-size: cover;
+    background-position: center;
+}
+.section-1-img  .img-4{
+    background: url(https://assets1.ignimgs.com/2018/10/10/home-sweet-home---button-fin-1539211957213.jpg?width=300&crop=1%3A1%2Csmart&auto=webp);
+    background-size: cover;
+    background-position: center;
+}
+.section-1-img  .img-5{
+    background: url(https://cdn1.epicgames.com/offer/9773aa1aa54f4f7b80e44bef04986cea/EGS_RocketLeague_PsyonixLLC_S2_1200x1600-b61e9e7ec5d3294dfa514f23fc7f0684);
+    background-size: cover;
+    background-position: center;
+}
+.section-1-img  .img-6{
+    background: url(../images/fortnite.jpg);
+    background-size: cover;
+    background-position: center;
+}
+.img:hover{
+    transform: translateY(-10px);
+}
+
+/* Section 2 starts here */
+
+
+.logo {
+    margin-left: auto !important;
+    margin-right: 20px !important;
+    clip-path: polygon(36% 0, 100% 0, 100% 100%, 0% 100%) !important;
+}
+
+.gaming-carousel {
+    width: 50%;
+    height: 300px;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+.carousel-slides {
+    display: flex;
+    width: 400%;
+    height: 150%;
+    animation: slide 20s infinite;
+}
+
+@keyframes slide {
+    0% { transform: translateX(0); }
+    20% { transform: translateX(-25%); }
+    40% { transform: translateX(-50%); }
+    60% { transform: translateX(-75%); }
+    80% { transform: translateX(-75%); }
+    100% { transform: translateX(0); }
+}
+
+.slide {
+    width: 25%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    transition: all 5s ease;
+}
+
+/* Remove old player styles */
+.players, .p-image, .stars {
+    display: none !important;
+}
+
+/* Adjust section-2 */
+.section-2 {
+    height: 60vh;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.section-2 h1 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+
+
+
+
+
+
+
+/* Section 3 starts here */
+.game-categories{
+    width: 70%;
+    margin: 50px auto;
+    position: relative;
+}
+.game-categories h1{
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: #FEC53A;
+}
+.game-wrapper{
+    display: flex;
+}
+.gw{
+    width: 120px;
+    height: 120px;
+    background: url();
+    background-size: cover;
+    background-position: center;
+    margin: 20px 15px 0 0;
+    border-radius: 10px;
+}
+.gw:hover{
+    transform: translateY(-10px);
+}
+.left{
+    position: relative;
+    right: -140px;
+}
+
+.gw-1{
+    background: url(https://variety.com/wp-content/uploads/2024/08/Valorant_a27b53.png?w=1000&h=667&crop=1&resize=1000%2C667);
+    background-size: cover;
+    background-position: center;
+}
+.gw-2{
+    background: url(https://m.media-amazon.com/images/M/MV5BNmRiYmJlYmEtN2I1Ni00N2IwLThkNWEtMDVhNzA1YTZhOTA4XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg);
+    background-size: cover;
+    background-position: center;
+}
+.gw-3{
+    background: url(https://hayestalisman.com/wp-content/uploads/2024/12/XVT5RCXv74mdDcE93E9sIcmvHL3ScqE1ObyhIybf.png);
+    background-size: cover;
+    background-position: center;
+}
+.gw-4{
+    background: url(https://assets1.ignimgs.com/2018/10/10/home-sweet-home---button-fin-1539211957213.jpg?width=300&crop=1%3A1%2Csmart&auto=webp);
+    background-size: cover;
+    background-position: center;
+}
+.gw-5{
+    background: url(https://cdn1.epicgames.com/offer/9773aa1aa54f4f7b80e44bef04986cea/EGS_RocketLeague_PsyonixLLC_S2_1200x1600-b61e9e7ec5d3294dfa514f23fc7f0684);
+    background-size: cover;
+    background-position: center;
+}
+.gw-6{
+    background: url(https://cdn.akamai.steamstatic.com/apps/csgo/images/csgo_react/social/cs2.jpg);
+    background-size: cover;
+    background-position: center;
+}
+.gw-7{
+    background: url(https://www.gamershopbd.com/wp-content/uploads/2021/01/Grand-Theft-Auto-V-cover.jpg);
+    background-size: cover;
+    background-position: center;
+}
+.gw-8{
+    background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbWEWqpqu7Ab6SaWGA8ZPEj2ccurnH82J7zw&s);
+    background-size: cover;
+    background-position: center;
+}
+.gw-9{
+    background: url(https://upload.wikimedia.org/wikipedia/en/3/31/Dota_2_Steam_artwork.jpg);
+    background-size: cover;
+    background-position: center;
+}
+.gw-10{
+    background: url(https://bloximages.newyork1.vip.townnews.com/dailynebraskan.com/content/tncms/assets/v3/editorial/0/da/0dad4366-4bf8-11ec-85aa-ebb17a277faf/619c3c366811f.image.jpg?crop=1920%2C1008%2C0%2C35&resize=1200%2C630&order=crop%2Cresize);
+    background-size: cover;
+    background-position: center;
+}
+.section-2{
+    width: 100%;
+    height: 50vh;
+    background-image:linear-gradient(rgba(0, 0, 0, 0.767),rgba(0, 0, 0, 0.712)),
+    url(../images/flame.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.section-2 h1{
+    font-size: 2rem;
+    color: #fff;
+    margin: 20px 0;
+}
+
+/* section 3 starts here */
+
+.section-3{
+    width: 100%;
+    height: 80vh;
+    background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url(https://img.freepik.com/free-photo/galaxy-planets-digital-art_23-2151727728.jpg?t=st=1742056439~exp=1742060039~hmac=5a698223e44aa66606940cb70b6fc59e282c5103b3058181fedd8b68c9a0e771&w=1380);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+.section-3 h1{
+    font-size: 2rem;
+    color: #fff;
+    text-align: center;
+    font-weight: 400;
+}
+
+.section-3-wrapper{
+    display: flex;
+    min-height: 70vh;
+    align-items: center;
+    justify-content: center;
+}
+
+.feedback{
+    width: 250px;
+    height: 300px;
+    background: url(../images/feedback.jpg);
+    background-position: center;
+    background-size: cover;
+ 
+}
+.feedback-desc{
+    width: 300px;
+    height: 300px;
+    background: rgba(0, 0, 0, 0.767);
+    padding: 10px;
+    color: #fff;
+    margin-right: 10px;
+}
+.feedback-desc .far{
+    color: #FEC53A;
+    font-size: 30px;
+}
+.f-img-2{
+    background: url(../images/image9.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+/* FOoter section */
+footer{
+    width: 100%;
+    height: 55vh;
+    background: #34055a;
+    display: flex;
+    align-items: center;
+}
+
+.footer-body{
+    width: 50%;  /* Changed from 90% */
+    margin: auto;
+    display: flex;
+    justify-content: space-between;  /* Changed from space-around */
+}
+
+.footer-logo{
+    height: 12vh;
+    background-color: #ffb700;
+    color: #000000;
+    line-height: 1.7rem;
+    margin-right: 40px;  /* Added spacing after logo */
+}
+
+ul {
+    margin: 0 30px;  /* Added horizontal spacing between lists */
+    padding: 0 20px;  /* Added internal padding */
+}
+
+ul h3{
+    color: #f8e807;
+    font-weight: 450;
+    margin-bottom: 15px;  /* Increased spacing below headings */
+}
+footer ul li a {
+    color: #beaddd;
+    text-decoration: none;
+    list-style: none;
+    line-height: 2.5rem;
+  }
+
+/* Add these media queries at the bottom of your CSS */
+@media (max-width: 1200px) {
+    .content-wrapper {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .rakuto {
+        margin-top: 30px;
+    }
+}
+
+@media (max-width: 992px) {
+    .game-wrapper {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .gw {
+        margin: 10px;
+    }
+    
+    .section-3-wrapper {
+        flex-direction: column;
+    }
+    
+    .feedback,
+    .feedback-desc {
+        margin: 20px auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .logo {
+        width: 200px;
+        margin-left: auto !important;
+        margin-right: 10px !important;
+    }
+    
+    .content-desc h1 {
+        font-size: 2rem;
+    }
+    
+    #btn2 {
+        width: 250px;
+    }
+    
+    .gaming-carousel {
+        width: 90%;
+        height: 200px;
+    }
+    
+    .footer-body {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .footer-logo {
+        margin: 0 0 30px 0;
+    }
+    
+    ul {
+        margin: 20px 0;
+    }
+}
+
+@media (max-width: 576px) {
+    .logo-section .fas {
+        font-size: 4rem;
+    }
+    
+    .logo-section h1 {
+        font-size: 1.5rem;
+    }
+    
+    .section-1-img {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .img {
+        margin: 10px;
+    }
+    
+    .game-categories {
+        width: 90%;
+    }
+    
+    .section-2 h1 {
+        font-size: 1.5rem;
+    }
+}
+
+/* Add these general responsive rules */
+.container {
+    min-width: 320px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.flex-container {
+    flex-wrap: wrap;
+}
+
+/* Update existing styles for responsiveness */
+.logo {
+    transition: all 0.3s ease;
+}
+
+.content-desc p {
+    width: auto;
+    max-width: 550px;
+    padding: 0 20px;
+}
+
+.gaming-carousel {
+    max-width: 800px;
+    width: 90%;
+}
+
+.left {
+    position: static;
+    margin-top: 20px;
+}
+
+.section-3-wrapper {
+    flex-wrap: wrap;
+}
+
