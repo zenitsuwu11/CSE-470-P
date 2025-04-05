@@ -62,6 +62,8 @@
           <!-- Redirect to Login -->
           <div class="register">
             <p>Already have an account? <a href="{{ route('login') }}">Login</a> here!</p>
+            <p> ㅤ </p>
+            <p>New Admin? <a href="{{ route('admin_register') }}">Signup</a> here!</p>
           </div>
         </form>
       </div>

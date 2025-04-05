@@ -17,8 +17,13 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name',
+        'username',  // Add this if you want a username separate from name
         'email',
         'password',
+        'bio',       // New field for profile information
+        'birthday',  // New field for user's birthday
+        'country',   // New field for user's country
+        'phone',     // New field for user's phone
     ];
 
     /**

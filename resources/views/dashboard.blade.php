@@ -1,54 +1,73 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="responsive">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>G-Hub Dashboard</title>
-    <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" type="image/x-icon">
-    <!-- Dashboard CSS -->
-    <link rel="stylesheet" href="{{ asset('css/dashboard.css') }}">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gaming Hub Dashboard</title>
+  <link rel="stylesheet" href="{{ asset('css/dashboard.css') }}">
+  <style>
+    /* Ensure text is rendered normally (not italic) */
+    body, h1, h2, h3, p, a, span, li, div {
+      font-style: normal !important;
+    }
+  </style>
 </head>
-<body class="responsive_page">
-    <div class="responsive_page_frame with_header">
-        <!-- Global Header (Navigation Bar) -->
-        <div id="global_header">
-            <div class="header_container">
-                <!-- Logo Section -->
-                <div class="logo">
-                    <a href="{{ route('dashboard') }}">
-                        <!-- Replace the image below with your G-Hub logo -->
-                        <img src="{{ asset('images/ghub_logo.png') }}" alt="G-Hub Logo">
-                    </a>
-                </div>
-                <!-- Navigation Menu -->
-                <div class="nav_menu">
-                    <ul class="menu">
-                        <li><a href="#">STORE</a></li>
-                        <li><a href="#">COMMUNITY</a></li>
-                        <li><a href="#">ABOUT</a></li>
-                        <li><a href="#">SUPPORT</a></li>
-                    </ul>
-                </div>
-                <!-- User Area -->
-                <div class="user_area">
-                    <span class="username">{{ auth()->user()->name }}</span>
-                    <a class="profile_link" href="#">Profile</a>
-                    <form action="{{ route('logout') }}" method="POST" style="display:inline;">
-                        @csrf
-                        <button type="submit" class="logout_button">Logout</button>
-                    </form>
-                </div>
-            </div>
+<body>
+  <header>
+    <!-- Header with Two Rows: Logo, Search, and User Area -->
+    <div class="header-top">
+      <div class="logo">
+        G-Hub
+      </div>
+      <div class="right-section">
+        <div class="search-box">
+          <input type="text" id="search-box" placeholder="Search games...">
+          <button id="search-btn">🔍</button>
         </div>
-
-        <!-- Main Dashboard Content -->
-        <div id="content">
-            <h1>Welcome to G-Hub Dashboard</h1>
-            <p>Enjoy your stay at G-Hub. Explore our games, community, and more!</p>
-            <!-- You can add more dashboard widgets or content here -->
+        <div class="user_area">
+          <span class="username">{{ auth()->user()->name }}</span>
+          <a class="profile_link" href="{{ route('profile.show') }}">Profile</a>
+          <form action="{{ route('logout') }}" method="POST" style="display:inline;">
+            @csrf
+            <button type="submit" class="logout_button">Logout</button>
+          </form>
         </div>
+      </div>
     </div>
-    <!-- Dashboard JavaScript (if any) -->
-    <script src="{{ asset('js/dashboard.js') }}"></script>
+    <!-- Secondary Navigation -->
+    <div class="header-bottom">
+      <nav class="secondary-nav">
+        <ul>
+          <li><a href="#">Store</a></li>
+          <li><a href="#">Library</a></li>
+          <li><a href="#">Community</a></li>
+          <li><a href="#">Support</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Display Games Grouped by Category -->
+    @foreach($groupedGames as $category => $games)
+      <section class="game-category">
+        <h2>{{ $category }}</h2>
+        <div class="game-grid">
+          @foreach($games as $game)
+            <div class="game">
+              <img src="{{ $game->image }}" alt="{{ $game->name }}">
+              <h3>{{ $game->name }}</h3>
+              <p>{{ $game->details }}</p>
+              <div class="price">${{ number_format($game->price, 2) }}</div>
+              <button class="buy-btn">Buy Now</button>
+            </div>
+          @endforeach
+        </div>
+      </section>
+    @endforeach
+  </main>
+
+  <!-- Include your search JS if needed -->
+  <script src="{{ asset('js/search.js') }}"></script>
 </body>
 </html>

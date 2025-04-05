@@ -1,0 +1,107 @@
+/* admin_users.css */
+
+/* Reset & Base Styles */
+body, h1, h2, h3, p, a, span, li, div, table {
+    font-style: normal;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+  }
+  
+  body {
+    background: #1b2838;
+    color: white;
+  }
+  
+  /* Header Top (Logo and User Area) */
+  .header-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #1f1721;
+    color: #fff;
+    padding: 15px 20px;
+  }
+  
+  .logo {
+    font-size: 26px;
+    font-weight: bold;
+  }
+  
+  /* Right Section (User Area) */
+  .right-section {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  /* User Area */
+  .user_area {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  .user_area .username {
+    font-weight: bold;
+  }
+  
+  .profile_link {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .logout_button {
+    background: #ff750f;
+    border: none;
+    color: #fff;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 3px;
+  }
+  
+  .logout_button:hover {
+    background: #d1650a;
+  }
+  
+  /* Main Content */
+  main {
+    padding: 20px;
+  }
+  
+  /* Table Container */
+  .table-container {
+    max-height: 400px;
+    overflow-y: auto;
+    margin-top: 20px;
+    background: #2a475e;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
+  /* Table Styles */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  table thead {
+    background: #1f1721;
+  }
+  
+  table thead th {
+    padding: 10px;
+    border: 1px solid #444;
+    text-transform: uppercase;
+  }
+  
+  table tbody td {
+    padding: 10px;
+    border: 1px solid #444;
+  }
+  
+  table tbody tr:nth-child(even) {
+    background: #1b2838;
+  }
+  

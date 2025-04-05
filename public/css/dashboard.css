@@ -1,66 +1,262 @@
-/* public/css/dashboard.css */
+/* Reset & Base Styles */
+body, h1, h2, h3, p, a, span, li, div {
+  font-style: normal;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #f5f5f5;
+  background: #1b2838;
+  color: white;
 }
 
-.header_container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background: #171a21;
-    color: #fff;
-    padding: 10px 20px;
+/* Header Top (Logo, Search, User Area) */
+.header-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #1f1721;
+  color: #fff;
+  padding: 15px 20px;
 }
 
-.logo img {
-    height: 44px;
+.logo {
+  font-size: 26px;
+  font-weight: bold;
 }
 
-.nav_menu ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
+/* Right Section (Search & User Area) */
+.right-section {
+  display: flex;
+  align-items: center;
+  gap: 20px;
 }
 
-.nav_menu ul li {
-    margin: 0 15px;
+/* Search Box */
+.search-box {
+  display: flex;
+  align-items: center;
+  background: #2a475e;
+  border-radius: 5px;
+  padding: 5px;
 }
 
-.nav_menu ul li a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 14px;
-    text-transform: uppercase;
+.search-box input {
+  padding: 8px;
+  border: none;
+  background: transparent;
+  color: white;
+  outline: none;
+  width: 250px;
 }
 
+.search-box input::placeholder {
+  color: #aaa;
+}
+
+.search-box button {
+  padding: 8px 12px;
+  border: none;
+  background: #ff750f;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+.search-box button:hover {
+  background: #d1650a;
+}
+
+/* User Area */
 .user_area {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
+  gap: 15px;
 }
 
 .user_area .username {
-    margin-right: 15px;
-    font-weight: bold;
+  font-weight: bold;
 }
 
 .profile_link {
-    color: #fff;
-    text-decoration: none;
-    margin-right: 15px;
+  color: #fff;
+  text-decoration: none;
 }
 
 .logout_button {
-    background: #ff750f;
-    border: none;
-    color: #fff;
-    padding: 5px 10px;
-    cursor: pointer;
-    border-radius: 3px;
+  background: #ff750f;
+  border: none;
+  color: #fff;
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 3px;
 }
 
-#content {
-    padding: 20px;
+.logout_button:hover {
+  background: #d1650a;
+}
+
+/* Header Bottom (Secondary Navigation) */
+.header-bottom {
+  background: #222;
+  padding: 12px 0;
+}
+
+.secondary-nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+
+.secondary-nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  text-transform: uppercase;
+  transition: color 0.3s;
+}
+
+.secondary-nav ul li a:hover {
+  color: #ff750f;
+}
+
+/* Hero Section */
+.hero {
+  padding: 60px;
+  text-align: center;
+  background: linear-gradient(to right, #1b2838, #2a475e);
+  color: #fff;
+}
+
+.hero h1 {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  font-size: 18px;
+}
+
+/* Game Grid */
+.game-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Game Card */
+.game {
+  background: #2a475e;
+  border-radius: 8px;
+  overflow: hidden;
+  text-align: center;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.game:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.game img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.game h3 {
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+.game p {
+  font-size: 14px;
+  color: #ddd;
+  margin-bottom: 10px;
+}
+
+.price {
+  font-weight: bold;
+  color: #ff750f;
+  margin-bottom: 10px;
+}
+
+.buy-btn {
+  background: #ff750f;
+  border: none;
+  color: #fff;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.buy-btn:hover {
+  background: #d1650a;
+}
+
+/* Search Results Section */
+#search-results {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Search Result Card */
+.game-box {
+  background: #2a475e;
+  border-radius: 8px;
+  overflow: hidden;
+  text-align: center;
+  padding: 15px;
+  width: 250px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.game-box:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.game-box img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.game-box h3 {
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+.game-box p {
+  font-size: 14px;
+  color: #ddd;
+  margin-bottom: 10px;
+}
+
+.game-box a {
+  display: inline-block;
+  padding: 8px 12px;
+  background: #ff750f;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.game-box a:hover {
+  background: #d1650a;
 }

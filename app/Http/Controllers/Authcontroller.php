@@ -37,24 +37,22 @@ class AuthController extends Controller
     }
 
     // Process registration submission
-    public function register(Request $request) {
+    public function register(Request $request)
+    {
         $request->validate([
-            'name'                  => ['required', 'string', 'max:255'],
-            'email'                 => ['required', 'email', 'max:255', 'unique:users'],
-            'password'              => ['required', 'min:8', 'confirmed'],
+            'name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'email', 'max:255', 'unique:users'],
+            'password' => ['required', 'min:8', 'confirmed'],
         ]);
-
-        $user = User::create([
-            'name'     => $request->name,
-            'email'    => $request->email,
+    
+        User::create([
+            'name' => $request->name,
+            'email' => $request->email,
             'password' => Hash::make($request->password),
         ]);
-
-        Auth::login($user);
-
-        return redirect('/dashboard');
+    
+        return redirect()->route('login')->with('success', 'Registration successful! Please login.');
     }
-
     // Logout the user
     public function logout(Request $request) {
         Auth::logout();

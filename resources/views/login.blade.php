@@ -30,6 +30,8 @@
                     @enderror
                     <button type="submit">Log in</button>
                     <div class="register">
+                        <p>Admins <a href="{{ route('admin_login') }}">Login</a> here!</p>
+                        <p> ㅤ  </p>
                         <p>Don't have an account? <a href="{{ route('register') }}">Signup</a> now!</p>
                     </div>
                 </form>
