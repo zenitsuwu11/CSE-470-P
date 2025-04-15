@@ -14,7 +14,8 @@ class AdminGameController extends Controller
         $categories = ['Featured Games', 'More to Discover', 'RPG', 'FPS'];
         // Retrieve all games (ordered by creation date, newest first)
         $games = Game::orderBy('created_at', 'desc')->get();
-        return view('admin_dashboard', compact('categories', 'games'));
+        $supports = \App\Models\Support::all();
+        return view('admin_dashboard', compact('categories', 'games','supports'));
     }
 
     // Store the new game from admin dashboard form

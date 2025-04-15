@@ -1,6 +1,6 @@
 /* Reset & Base Styles */
 body, h1, h2, h3, p, a, span, li, div {
-  font-style: normal;
+  font-style: normal !important;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -8,7 +8,7 @@ body, h1, h2, h3, p, a, span, li, div {
 }
 
 body {
-  background: #1b2838;
+  background: #21344a;
   color: white;
 }
 
@@ -17,7 +17,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: #1f1721;
+  background: #304d6e;
   color: #fff;
   padding: 15px 20px;
 }
@@ -38,9 +38,10 @@ body {
 .search-box {
   display: flex;
   align-items: center;
-  background: #2a475e;
+  background: #10283b;
   border-radius: 5px;
   padding: 5px;
+  position: relative;
 }
 
 .search-box input {
@@ -66,6 +67,60 @@ body {
 }
 
 .search-box button:hover {
+  background: #d1650a;
+}
+
+/* Dropdown Styles for Search Results */
+.dropdown-results {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: #2a475e;
+  border: 1px solid #444;
+  border-top: none;
+  max-height: 300px;
+  overflow-y: auto;
+  z-index: 1000;
+  display: none;
+}
+
+.dropdown-results .result-item {
+  padding: 10px;
+  border-bottom: 1px solid #444;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.dropdown-results .result-item:hover {
+  background: #3a5b74;
+}
+
+.dropdown-results .result-item img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.dropdown-results .result-item h3 {
+  font-size: 16px;
+  margin: 0;
+  flex-grow: 1;
+}
+
+.dropdown-results .result-item a {
+  background: #ff750f;
+  color: #fff;
+  padding: 5px 10px;
+  text-decoration: none;
+  border-radius: 3px;
+  font-size: 14px;
+}
+
+.dropdown-results .result-item a:hover {
   background: #d1650a;
 }
 
@@ -100,7 +155,7 @@ body {
 
 /* Header Bottom (Secondary Navigation) */
 .header-bottom {
-  background: #222;
+  background: #292938;
   padding: 12px 0;
 }
 
@@ -204,59 +259,38 @@ body {
   background: #d1650a;
 }
 
-/* Search Results Section */
-#search-results {
+/* Balance Box - White styled box with user and balance */
+.balance-box {
+  background: #fff;
+  color: #000;
+  padding: 10px 15px;
+  border-radius: 8px;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-  padding: 20px;
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: 140px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
-/* Search Result Card */
-.game-box {
-  background: #2a475e;
-  border-radius: 8px;
-  overflow: hidden;
-  text-align: center;
-  padding: 15px;
-  width: 250px;
-  transition: transform 0.3s, box-shadow 0.3s;
+.balance-info {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
 }
 
-.game-box:hover {
-  transform: scale(1.05);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-}
-
-.game-box img {
-  width: 100%;
-  height: 150px;
-  object-fit: cover;
-  border-radius: 8px;
-}
-
-.game-box h3 {
-  font-size: 18px;
-  margin: 10px 0;
-}
-
-.game-box p {
+.balance-username {
+  font-weight: bold;
   font-size: 14px;
-  color: #ddd;
-  margin-bottom: 10px;
+  color: #333;
 }
 
-.game-box a {
-  display: inline-block;
-  padding: 8px 12px;
-  background: #ff750f;
-  color: white;
+.balance-amount a {
+  font-size: 16px;
+  font-weight: bold;
+  color: #ff750f;
   text-decoration: none;
-  border-radius: 5px;
-  font-size: 14px;
 }
 
-.game-box a:hover {
-  background: #d1650a;
+.balance-amount a:hover {
+  text-decoration: underline;
 }

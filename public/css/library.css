@@ -1,0 +1,233 @@
+/* Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Body Styling */
+body {
+  background: #21344a;
+  color: white;
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+/* HEADER */
+
+/* Header Container */
+header {
+  margin-bottom: 20px;
+}
+
+/* Header Top */
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #304d6e;
+  padding: 15px 20px;
+}
+
+.logo {
+  font-size: 26px;
+  font-weight: bold;
+}
+
+.right-section {
+  display: flex;
+  align-items: center;
+}
+
+/* User Area */
+.user_area {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.username {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+/* Profile link styled as a normal text link */
+.profile_link {
+  color: #ffffff;
+  text-decoration: underline;
+  font-size: 16px;
+}
+
+/* Logout button styled as a button */
+.logout_button {
+  background-color: #f44336;
+  color: white;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.logout_button:hover {
+  background-color: #d32f2f;
+}
+
+/* Header Bottom: Secondary Navigation */
+.header-bottom {
+  background: #2a475e;
+  padding: 10px 20px;
+}
+
+.secondary-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.secondary-nav li a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  transition: color 0.3s ease;
+}
+
+.secondary-nav li a:hover {
+  color: #ff750f;
+}
+
+/* Balance Box */
+.balance-box {
+  margin-left: 15px;
+  background: #2a475e;
+  padding: 8px 12px;
+  border-radius: 6px;
+}
+
+.balance-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.balance-username {
+  font-size: 14px;
+}
+
+.balance-amount a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+/* LIBRARY CONTAINER */
+.library-container {
+  background: #2a475e;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+  margin-top: 20px;
+}
+
+.library-container h2 {
+  margin-bottom: 25px;
+  font-size: 28px;
+  color: #ff750f;
+  border-bottom: 2px solid #ff750f;
+  padding-bottom: 15px;
+}
+
+/* Library Grid */
+.library-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 20px;
+}
+
+/* Game Container */
+.game-container {
+  background: #304d6e;
+  padding: 20px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.game-container:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+}
+
+.game-cover {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+/* Game Details */
+.game-details {
+  text-align: center;
+}
+
+.game-details h3 {
+  font-size: 22px;
+  color: #ff750f;
+  margin-bottom: 12px;
+}
+
+.game-details p {
+  font-size: 16px;
+  color: #ddd;
+  margin-bottom: 10px;
+}
+
+.game-details .price {
+  font-size: 18px;
+  font-weight: bold;
+  color: #ff750f;
+  margin-bottom: 10px;
+}
+
+.game-btn {
+  background-color: #ff750f;
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 6px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.game-btn:hover {
+  background-color: #d1650a;
+}
+
+/* Delete Button */
+.delete-btn {
+  background-color: #f44336;
+  color: white;
+  padding: 6px 12px;
+  font-size: 14px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
+  text-decoration: none;
+}
+
+.delete-btn:hover {
+  background-color: #d32f2f;
+}
+
+.delete-btn:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}

@@ -1,0 +1,141 @@
+/* Reset & Base Styles */
+body, h1, h2, h3, p, a, span, li, div, input, textarea, button, form {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Global Background */
+  body {
+    background: #21344a;
+    color: white;
+  }
+  
+  /* Header Styles */
+  .header-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #304d6e;
+    padding: 15px 20px;
+  }
+  
+  .logo {
+    font-size: 26px;
+    font-weight: bold;
+  }
+  
+  .right-section {
+    display: flex;
+    align-items: center;
+  }
+  
+  .user_area {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  .profile_link {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .logout_button {
+    background: #ff750f;
+    border: none;
+    color: #fff;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 3px;
+  }
+  
+  .logout_button:hover {
+    background: #d1650a;
+  }
+  
+  .header-bottom {
+    background: #222;
+    padding: 12px 0;
+  }
+  
+  .secondary-nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+  }
+  
+  .secondary-nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: color 0.3s;
+  }
+  
+  .secondary-nav ul li a:hover {
+    color: #ff750f;
+  }
+  
+  /* Support Container */
+  .support-container {
+    max-width: 600px;
+    margin: 40px auto;
+    background: #2a475e;
+    padding: 20px;
+    border-radius: 5px;
+  }
+  
+  .support-container h1 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .flash-message {
+    color: #0f0;
+    text-align: center;
+    margin-bottom: 15px;
+  }
+  
+  /* Form Styles */
+  .support-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .form-group input,
+  .form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    background: rgba(0, 0, 0, 0.2);
+    color: #fff;
+  }
+  
+  .form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+  }
+  
+  .submit-btn {
+    background: #ff750f;
+    border: none;
+    color: #fff;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+  
+  .submit-btn:hover {
+    background: #d1650a;
+  }
+  

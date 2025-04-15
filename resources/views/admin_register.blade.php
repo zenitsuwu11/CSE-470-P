@@ -36,7 +36,7 @@
                     <div class="inputbox">
                         <ion-icon name="lock-closed-outline"></ion-icon>
                         <input type="password" name="password" id="password" required>
-                        <label>Password</label>
+                        <label>Pass</label>
                         <ion-icon name="eye-off-outline" class="toggle-password"></ion-icon>
                     </div>
                     @error('password')

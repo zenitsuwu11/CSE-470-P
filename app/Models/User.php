@@ -45,4 +45,26 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    /**
+     * Define the relationship with the Purchase model
+     */
+    public function purchases()
+    {
+        return $this->hasMany(Purchase::class);
+    }
+
+    /**
+     * Define the relationship with the BalanceTransaction model
+     */
+    public function userBalanceTransactions()
+    {
+        return $this->hasMany(BalanceTransaction::class, 'user_id');
+    }
+    public function balance()
+    {
+    return $this->hasOne(\App\Models\UserBalance::class, 'user_id');
+    }
+    
+
 }

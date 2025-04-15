@@ -39,7 +39,7 @@
           <div class="inputbox">
             <ion-icon name="lock-closed-outline"></ion-icon>
             <input type="password" name="password" id="password" required>
-            <label for="password">Password</label>
+            <label for="password">Pass</label>
             <ion-icon name="eye-off-outline" id="toggle-password" class="toggle-password"></ion-icon>
             <small class="password-info">Password must be at least 8 characters long.</small>
           </div>
@@ -51,7 +51,7 @@
           <div class="inputbox">
             <ion-icon name="lock-closed-outline"></ion-icon>
             <input type="password" name="password_confirmation" id="confirm-password" required>
-            <label for="password_confirmation">Confirm Password</label>
+            <label for="password_confirmation">Confirm Pass</label>
             <ion-icon name="eye-off-outline" id="toggle-confirm-password" class="toggle-password"></ion-icon>
             <small id="confirm-password-info" class="password-info"></small>
           </div>

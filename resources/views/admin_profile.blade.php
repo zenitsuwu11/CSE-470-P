@@ -4,16 +4,44 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Admin Profile</title>
-  <!-- Link to your profile CSS and Bootstrap -->
+  <!-- Include Dashboard CSS for the nav bar styles and profile.css for the profile form styling -->
+  <link rel="stylesheet" href="{{ asset('css/dashboard.css') }}">
   <link rel="stylesheet" href="{{ asset('css/profile.css') }}">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
+  <!-- Header Navigation -->
+  <header>
+    <!-- Top Navigation Bar -->
+    <div class="header-top">
+      <div class="logo">
+        G-Hub(Admin-profile)
+      </div>
+      <div class="right-section">
+        <div class="user_area">
+          <span class="username">{{ auth('admin')->user()->name }}</span>
+          <form action="{{ route('admin_logout') }}" method="POST" style="display:inline;">
+            @csrf
+            <button type="submit" class="logout_button">Logout</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!-- Bottom Navigation Bar -->
+    <div class="header-bottom">
+      <nav class="secondary-nav">
+        <ul>
+          <li><a href="{{ route('admin_dashboard') }}">Dashboard</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Profile Content -->
   <div class="container light-style flex-grow-1 container-p-y mt-4">
-    <h4 class="font-weight-bold py-3 mb-4 text-white">Admin - Profile</h4>
     <div class="card overflow-hidden">
       <div class="row no-gutters row-bordered row-border-light">
-        <!-- Sidebar Navigation -->
+        <!-- Sidebar Navigation (Profile Tabs) -->
         <div class="col-md-3 pt-0">
           <div class="list-group list-group-flush account-settings-links">
             <a class="list-group-item list-group-item-action active" data-toggle="list" href="#account-general">General</a>
@@ -27,20 +55,20 @@
           <div class="tab-content">
             <!-- General Tab -->
             <div class="tab-pane fade active show" id="account-general">
-                <div class="card-body">
-                    <form id="admin-general-form" method="POST" action="{{ route('admin.profile.update.general') }}">
-                    @csrf
-                    <div class="form-group">
-                        <label class="form-label">Username</label>
-                        <input type="text" class="form-control" name="username" value="{{ auth('admin')->user()->name }}" required>
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label">E-mail</label>
-                        <input type="email" class="form-control" name="email" value="{{ auth('admin')->user()->email }}" required>
-                    </div>
-                    <button type="button" class="btn btn-primary" onclick="confirmSubmission('admin-general-form', 'Do you want to save the changes? Your current data will be overwritten.')">Save Changes</button>
-                    </form>
-                </div>
+              <div class="card-body">
+                <form id="admin-general-form" method="POST" action="{{ route('admin.profile.update.general') }}">
+                  @csrf
+                  <div class="form-group">
+                    <label class="form-label">Username</label>
+                    <input type="text" class="form-control" name="username" value="{{ auth('admin')->user()->name }}" required>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">E-mail</label>
+                    <input type="email" class="form-control" name="email" value="{{ auth('admin')->user()->email }}" required>
+                  </div>
+                  <button type="button" class="btn btn-primary" onclick="confirmSubmission('admin-general-form', 'Do you want to save the changes? Your current data will be overwritten.')">Save Changes</button>
+                </form>
+              </div>
             </div>
 
             <!-- Change Password Tab -->
@@ -64,6 +92,7 @@
                 </form>
               </div>
             </div>
+
             <!-- Info Tab -->
             <div class="tab-pane fade" id="account-info">
               <div class="card-body">
@@ -95,6 +124,7 @@
                 </form>
               </div>
             </div>
+
             <!-- Delete Account Tab -->
             <div class="tab-pane fade" id="account-delete">
               <div class="card-body">
