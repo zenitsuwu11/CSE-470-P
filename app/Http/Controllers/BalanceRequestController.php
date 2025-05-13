@@ -13,8 +13,10 @@ class BalanceRequestController extends Controller
     // Admin view of all balance requests.
     public function index()
     {
-        // Eagerly load the user relationship to fetch the user's data, including the name.
-        $requests = BalanceRequest::with('user')->orderBy('created_at', 'desc')->get();
+        $requests = BalanceRequest::with('user')
+                   ->orderBy('created_at', 'desc')
+                   ->get();
+
         return view('balance_requests', compact('requests'));
     }
 
@@ -22,38 +24,34 @@ class BalanceRequestController extends Controller
     public function approve($id)
     {
         DB::beginTransaction();
-
         try {
-            $balanceRequest = BalanceRequest::findOrFail($id);
+            $br = BalanceRequest::findOrFail($id);
 
-            if ($balanceRequest->status === 'approved') {
+            if ($br->status === 'approved') {
                 return redirect()->back()->with('info', 'This request is already approved.');
             }
 
-            $balanceRequest->status = 'approved';
-            $balanceRequest->save();
+            $br->status = 'approved';
+            $br->save();
 
-            // Update or create user balance
-            $userBalance = UserBalance::firstOrCreate(
-                ['user_id' => $balanceRequest->user_id],
-                ['amount' => 0]
+            $ub = UserBalance::firstOrCreate(
+                ['user_id' => $br->user_id],
+                ['amount'  => 0]
             );
+            $ub->amount += $br->amount;
+            $ub->save();
 
-            $userBalance->amount += $balanceRequest->amount;
-            $userBalance->save();
-
-            // Log the transaction
             BalanceTransaction::create([
-                'user_id' => $balanceRequest->user_id,
-                'amount'  => $balanceRequest->amount,
+                'user_id' => $br->user_id,
+                'amount'  => $br->amount,
                 'game_id' => null,
                 'type'    => 'addition',
             ]);
 
             DB::commit();
-
             return redirect()->back()->with('success', 'Balance request approved.');
-        } catch (\Exception $e) {
+        }
+        catch (\Exception $e) {
             DB::rollBack();
             return redirect()->back()->with('error', 'Error: ' . $e->getMessage());
         }
@@ -62,9 +60,11 @@ class BalanceRequestController extends Controller
     // Disapprove a balance request.
     public function disapprove($id)
     {
-        $balanceRequest = BalanceRequest::findOrFail($id);
-        $balanceRequest->status = 'disapproved';
-        $balanceRequest->save();
+        $br = BalanceRequest::findOrFail($id);
+
+        // ← This must be a quoted string
+        $br->status = 'disapproved';
+        $br->save();
 
         return redirect()->back()->with('success', 'Balance request disapproved.');
     }

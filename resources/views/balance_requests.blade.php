@@ -16,7 +16,7 @@
                     {{ auth()->check() ? auth()->user()->name : 'Guest' }}
                 </span>
                 <a class="profile_link" href="{{ route('admin.profile.show') }}">Profile</a>
-                <form action="{{ route('admin_logout') }}" method="POST" style="display:inline;">
+                <form action="{{ route('admin.logout') }}" method="POST" style="display:inline;">
                     @csrf
                     <button type="submit" class="logout_button">Logout</button>
                 </form>
@@ -27,6 +27,7 @@
     <div class="header-bottom">
         <nav class="secondary-nav">
             <ul>
+                <li><a href="{{ route('admin.recommended') }}">GamesDetails</a><li>
                 <li><a href="{{ route('admin_dashboard') }}">Dashboard</a></li>
                 <li><a href="{{ route('admin.users') }}">TUsers</a></li>
             </ul>

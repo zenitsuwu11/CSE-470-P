@@ -33,6 +33,10 @@
         <ul>
           <li><a href="{{ route('library') }}">Library</a></li>
           <li><a href="{{ route('dashboard') }}">Dashboard</a></li>
+          <li><a href="{{ route('gamenews.index') }}">News & Reviews</a></li>
+          <li><a href="{{ route('support.create') }}">Support</a></li>
+          <li><a href="{{ route('patch.index') }}">Patchupdate</a></li>
+          <li><a href="{{ route('social.index') }}">Social & Chat</a></li>
         </ul>
       </nav>
     </div>

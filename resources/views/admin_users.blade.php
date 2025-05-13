@@ -14,7 +14,7 @@
             <div class="user_area">
                 <span class="username">{{ auth()->user()->name }}</span>
                 <a class="profile_link" href="{{ route('admin.profile.show') }}">Profile</a>
-                <form action="{{ route('admin_logout') }}" method="POST" style="display:inline;">
+                <form action="{{ route('admin.logout') }}" method="POST" style="display:inline;">
                     @csrf
                     <button type="submit" class="logout_button">Logout</button>
                 </form>
@@ -25,6 +25,7 @@
     <div class="header-bottom">
         <nav class="secondary-nav">
             <ul>
+                <li><a href="{{ route('admin.recommended') }}">GamesDetails</a><li>
                 <li><a href="{{ route('admin_dashboard') }}" class="{{ request()->routeIs('admin_dashboard') ? 'active' : '' }}">Dashboard</a></li>
                 <li><a href="{{ route('admin.balance.requests') }}" class="{{ request()->routeIs('admin.balance.requests') ? 'active' : '' }}">User Balance Requests</a></li>
             </ul>

@@ -25,8 +25,13 @@
     <div class="header-bottom">
       <nav class="secondary-nav">
         <ul>
+          <li><a href="{{ route('profile.show') }}">Profile</a></li>
+          <li><a href="{{ route('social.index') }}">Social & Chat</a></li>
           <li><a href="{{ route('library') }}">Library</a></li>
           <li><a href="{{ route('dashboard') }}">Dashboard</a></li>
+          <li><a href="{{ route('gamenews.index') }}">News & Reviews</a></li>
+          <li><a href="{{ route('patch.index') }}">Patch Updates</a></li>
+          <li><a href="{{ route('reviews.index') }}">Submit Reviews</a></li>
         </ul>
       </nav>
     </div>

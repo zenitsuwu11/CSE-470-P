@@ -47,12 +47,12 @@ class AdminAuthController extends Controller
             'password' => bcrypt($request->password),
         ]);
     
-        return redirect()->route('admin_login')->with('success', 'Admin registration successful! Please login.');
+        return redirect()->route('admin.login')->with('success', 'Admin registration successful! Please login.');
     }
 
     public function logout()
     {
         Auth::guard('admin')->logout();
-        return redirect()->route('admin_login');
+        return redirect()->route('dashboard');
     }
 }

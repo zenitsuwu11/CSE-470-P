@@ -1,0 +1,218 @@
+/* patch.css */
+
+/* Reset some defaults */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Body & Layout */
+body {
+  font-family: Arial, sans-serif;
+  background: #121212;   /* Dark background */
+  color: #e0e0e0;         /* Light text color for contrast */
+}
+
+header .header-top {
+  background: #1e2a36;    /* Darker header background */
+  color: #f1c40f;          /* Bright yellow for text */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+
+header .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+header .logout-btn {
+  background: #e74c3c;    /* Red logout button */
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+header .logout-btn:hover {
+  background: #c0392b;     /* Darker red for hover */
+}
+
+.layout {
+  display: flex;
+  margin-top: 1rem; /* give space below header */
+}
+
+/* Sidebar */
+.sidebar {
+  width: 220px;
+  background: #2c3e50;    /* Dark grayish blue sidebar */
+  min-height: calc(100vh - 72px); /* header height approx. */
+  transition: width 0.3s ease;
+  position: relative;
+  overflow: visible; /* allow toggle button to show */
+}
+
+.sidebar.collapsed {
+  width: 0;
+  padding: 0;
+  overflow: visible; /* keep toggle button visible */
+}
+
+/* Keep the toggle button visible just outside the hidden sidebar */
+.toggle-btn {
+  position: absolute;
+  top: 10px;
+  right: -35px; /* move it outside the sidebar edge */
+  background: #2c3e50; /* Dark sidebar color */
+  color: #fff;
+  border: none;
+  padding: 0.4rem;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  z-index: 1002; /* above sidebar */
+}
+
+.sidebar-nav {
+  list-style: none;
+  margin-top: 3rem;
+}
+
+.sidebar-nav li + li {
+  margin-top: 1rem;
+}
+
+.sidebar-nav a {
+  display: block;
+  color: #bdc3c7;   /* Light gray text */
+  text-decoration: none;
+  padding: 0.75rem 1rem;
+  transition: background 0.2s;
+}
+
+.sidebar-nav a:hover,
+.sidebar-nav a.active {
+  background: #34495e;  /* Darker blue for hover and active state */
+}
+
+/* Hide all nav links when sidebar is collapsed */
+.sidebar.collapsed .sidebar-nav,
+.sidebar.collapsed .sidebar-nav li,
+.sidebar.collapsed .sidebar-nav a {
+  display: none;
+}
+
+/* Main Content */
+.main-content {
+  flex: 1;
+  padding: 2rem;
+}
+
+/* Patch Updates Section */
+.news-section {
+  background: #1e2a36;   /* Dark background for the section */
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.section-title {
+  margin-bottom: 1rem;
+  font-size: 1.75rem;
+  color: #f39c12;         /* Bright yellow section title */
+}
+
+/* Slider */
+.news-slider {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  padding-bottom: 1rem;
+  scroll-behavior: smooth;
+}
+
+/* Hide scrollbar */
+.news-slider::-webkit-scrollbar {
+  display: none;
+}
+.news-slider {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* News Card */
+.news-card {
+  flex: 0 0 300px;
+  background: #34495e;    /* Darker background for cards */
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+}
+
+.news-header {
+  border-bottom: 1px solid #7f8c8d;   /* Light gray border */
+  margin-bottom: 0.75rem;
+}
+
+.news-title {
+  font-size: 1.25rem;
+  color: #ecf0f1;          /* Light gray title */
+}
+
+.news-meta {
+  font-size: 0.85rem;
+  color: #95a5a6;          /* Soft gray for metadata */
+}
+
+.news-description,
+.news-notes {
+  margin-bottom: 0.75rem;
+}
+
+.news-description h3,
+.news-notes h3 {
+  font-size: 1rem;
+  margin-bottom: 0.3rem;
+  color: #f39c12;          /* Bright yellow subheading */
+}
+
+.news-description p,
+.news-notes p {
+  font-size: 0.9rem;
+  color: #bdc3c7;          /* Light gray description text */
+}
+
+.news-footer {
+  margin-top: auto;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  color: #bdc3c7;          /* Light gray footer text */
+}
+
+/* Pagination */
+.pagination {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.pagination .page-item .page-link {
+  color: #34495e;          /* Dark color for pagination links */
+}
+
+.pagination .page-item.active .page-link {
+  background: #f39c12;     /* Bright yellow for active page */
+  border-color: #f39c12;
+  color: #fff;
+}
+
+.pagination .page-link:hover {
+  background: #bdc3c7;     /* Light gray hover effect */
+}

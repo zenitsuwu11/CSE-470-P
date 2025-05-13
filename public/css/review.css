@@ -1,0 +1,106 @@
+/* Header Styling */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #304d6e;   /* was #333 */
+    color: #bc3333;
+}
+
+.nav-links {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex: 1;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.logout-form {
+    margin: 0;
+}
+
+.logout-form button {
+    background-color: #ff750f;   /* was #ff4d4d */
+    border: none;
+    color: white;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 4px;
+}
+
+.logout-form button:hover {
+    background-color: #d1650a;   /* hover adjusted to match first snippet */
+}
+
+/* Review Container */
+.review-container {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 1.5rem;
+    border: 1px solid #304d6e;    /* updated from #ccc */
+    border-radius: 8px;
+    background-color: #2a475e;    /* was #f9f9f9 */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);  /* Optional: Add some shadow for contrast */
+}
+
+/* Make sure the background behind the container also matches the dark theme */
+body {
+    background-color: #1e2a36;    /* Dark background to match the dark theme */
+    color: #fff;                   /* Light text color for legibility */
+}
+
+/* Review Form */
+.review-container h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.review-form label {
+    display: block;
+    margin-top: 1rem;
+    font-weight: bold;
+}
+
+.review-form input[type="text"],
+.review-form textarea,
+.review-form select {
+    width: 100%;
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+    border: 1px solid #304d6e;   /* updated from #ccc */
+    border-radius: 4px;
+    background: rgba(0, 0, 0, 0.2); /* carry over first snippet’s input bg style */
+    color: #fff;                   /* ensure legibility on dark bg */
+}
+
+.review-form textarea {
+    resize: vertical;
+}
+
+.review-form button {
+    margin-top: 1.5rem;
+    padding: 0.6rem 1.2rem;
+    background-color: #ff750f;   /* was #007bff */
+    border: none;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.review-form button:hover {
+    background-color: #d1650a;   /* was #0056b3 */
+}
+
+.success-message {
+    color: #0f0;                  /* green as in first snippet */
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 1rem;
+}

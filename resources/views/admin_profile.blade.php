@@ -20,7 +20,7 @@
       <div class="right-section">
         <div class="user_area">
           <span class="username">{{ auth('admin')->user()->name }}</span>
-          <form action="{{ route('admin_logout') }}" method="POST" style="display:inline;">
+          <form action="{{ route('admin.logout') }}" method="POST" style="display:inline;">
             @csrf
             <button type="submit" class="logout_button">Logout</button>
           </form>
