@@ -26,7 +26,7 @@
         <nav class="secondary-nav">
             <ul>
                 <li><a href="{{ route('admin.recommended') }}">GamesDetails</a><li>
-                <li><a href="{{ route('admin_dashboard') }}" class="{{ request()->routeIs('admin_dashboard') ? 'active' : '' }}">Dashboard</a></li>
+                <li><a href="{{ route('admin.dashboard') }}" class="{{ request()->routeIs('admin_dashboard') ? 'active' : '' }}">Dashboard</a></li>
                 <li><a href="{{ route('admin.balance.requests') }}" class="{{ request()->routeIs('admin.balance.requests') ? 'active' : '' }}">User Balance Requests</a></li>
             </ul>
         </nav>

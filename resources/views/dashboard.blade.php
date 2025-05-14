@@ -68,7 +68,7 @@
               @endif
               <img src="{{ $game->image }}" alt="{{ $game->name }}">
               <h3>{{ $game->name }}</h3>
-              <p>{{ $game->details }}</p>
+              
               <div class="price">
                 @if(isset($game->min_price) && isset($game->max_price) && $game->min_price != $game->max_price)
                   ${{ number_format($game->min_price, 2) }} – ${{ number_format($game->max_price, 2) }}
@@ -98,7 +98,7 @@
         <div class="game">
           <img src="{{ $game->image }}" alt="{{ $game->name }}">
           <h3>{{ $game->name }}</h3>
-          <p>{{ $game->details }}</p>
+          
           <div class="price">${{ number_format($game->price, 2) }}</div>
           <form action="{{ route('games.invoice', $game->id) }}" method="GET">
             @csrf
@@ -120,7 +120,7 @@
             <div class="game">
               <img src="{{ $game->image }}" alt="{{ $game->name }}">
               <h3>{{ $game->name }}</h3>
-              <p>{{ $game->details }}</p>
+              
               <div class="price">${{ number_format($game->price, 2) }}</div>
               <form action="{{ route('games.invoice', $game->id) }}" method="GET">
                 @csrf

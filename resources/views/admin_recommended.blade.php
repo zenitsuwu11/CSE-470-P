@@ -11,7 +11,7 @@
   <!-- Main Header -->
   <header class="main-header">
     <div class="G-Hub">
-      <a href="{{ route('admin_dashboard') }}" class="logo">G-Hub</a>
+      <a href="{{ route('admin.dashboard') }}" class="logo">G-Hub</a>
     </div>
     <div class="right-section">
       <form action="{{ route('logout') }}" method="POST">
@@ -23,7 +23,7 @@
 
   <!-- Secondary Header -->
   <header class="sub-header">
-    <a href="{{ route('admin_dashboard') }}" class="dashboard-link">Dashboard</a>
+    <a href="{{ route('admin.dashboard') }}" class="dashboard-link">Dashboard</a>
     <a href="{{ route('admin.users') }}">Tusers</a>
     <a href="{{ route('admin.balance.requests') }}">User Balance Requests</a>
   </header>

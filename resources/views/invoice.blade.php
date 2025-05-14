@@ -13,7 +13,7 @@
       <div class="logo">G-Hub</div>
       <div class="user_area">
         <span class="username">{{ auth()->user()->name }}</span>
-        <a class="profile_link" href="{{ route('profile.show') }}">Profile</a>
+          <li><a class="profile_link" href="{{ route('profile.show') }}">Profile</a></li>
         <form action="{{ route('logout') }}" method="POST" style="display:inline;">
           @csrf
           <button type="submit" class="logout_button">Logout</button>

@@ -28,7 +28,7 @@
         <nav class="secondary-nav">
             <ul>
                 <li><a href="{{ route('admin.recommended') }}">GamesDetails</a><li>
-                <li><a href="{{ route('admin_dashboard') }}">Dashboard</a></li>
+                <li><a href="{{ route('admin.dashboard') }}">Dashboard</a></li>
                 <li><a href="{{ route('admin.users') }}">TUsers</a></li>
             </ul>
         </nav>
